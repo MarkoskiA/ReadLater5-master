@@ -1,38 +1,30 @@
 <h1>Read Later</h1>
-<h2>A revolution in the world of social bookmarking</h2>
-Read Later is a fictional service designed to test a range of skills using the .net core 5 MVC architecture. For full details about this project, the libraries used, and a quickstart guide to getting it up and running, please visit the About page
-
-<h3>Tasks</h3>
-<p>Please complete 3 of the below exercises.  You will need to complete the first 2, and then choose 1 from the remaining 3 however feel free to complete more than 3, or to elaborate on the ways you achieve the solution.</p>
-<p>
-    This test is designed to measure your coding knowledge and skill however as time is limited you are not expected to produce 100% production ready code in all cases.  Most important is that the code works, and has the correct logical process
-    and structure to solve the problem.  Coding standards e.g. error logging and reporting, correct variable naming, conde commenting, unit testing are not required - you won't lose marks for forgetting to check a null reference here and there!
-</p>
-<h4>Complete these 2 first:</h4>
+<p> I Have finnished the assignment. Some of the things are not working property because I don't have no more time to debug it.</p>
+<p> I want to mention that I don't have experience with Razor pages so I did not create views for booking part. If thats the job requirement I will master it in very short time</p>
+<p>I want to mention that for the past 3 years I have been working with Angular 70% of the time and on the backend I have been working 30% but in my free time I watch courese for .Net and I would like to work with .net from now on</p>
+<p> For the optional tasks I have choose to do the first one and I will explain in this file how I can achieve the second and the third one.</p>
+<h2>Create Web Widget</h2>
 <ol>
-    <li>
-        <h5>Bookmark management</h5>
-        Implement full CRUD management for Bookmarks.  Users should be able to create a new category whilst creating a bookmark without requiring any page refresh
-    </li>
-    <li>
-        <h5>User accounts</h5>
-        The package has the default AspNetCore Identity installed however not implemented fully.  Complete this implementation and change the entities to work on a per user basis.  For additional credit,
-        implement multiple membership providers allowing users to log in with OpenID services
-    </li>
+  <li>Create javascript file. In the file we can set HTML elements and we will do an API call to retrieve Bookmarks.</li>
+  <li>We need to set CORS policy to 'AllowAll'.</li>
+  <li>We need to deploy the API and the javascript file.</li>
+    <li>When those are deployed then we have a link that navigates to the javascript file.</li>
+    <li>For usage we will use IFrame for example (<iframe src="https://linktothewidged">)</li>
+    <li>If someone wants to use the widget they just simply needs to add the Iframe tag in their frontend app.</li>
 </ol>
-<h4>Now choose one of these:</h4>
+<h2>Tracking and reporting</h2>
+Because I have no experience with Razor app I am not familiar if there are any nuget packages that can automatically make this processes. So I will explain it in two different ways.</p>
+<h2>First way</h2>
 <ol>
-    <li>
-        <h5>API access</h5>
-        Expose an API allowing external systems to manage bookmarks.  You will need to consider authentication / access tokens
-    </li>
-    <li>
-        <h5>Tracking and reporting</h5>
-        Track each time a user clicks out on one of their saved bookmarks and provide a simple dashboard which can show a summary of stats by user, and as an overview (e.g. for tracking the most popular links).
-        Users should also be able to share a short url with their friends which when clicked would also log usage statictics and be reported on
-    </li>
-    <li class="three">
-        <h5>Website widget</h5>
-        Provide 1 or more widgets that can be used in an external website, regardless of the server side technology.  These can provide any functionality you choose - for example showing the most recent 5 bookmarks for a particular user, or the 3 most popular bookmarks today
-    </li>
+  <li>Crete multiple API endpoints that accepts calls when some of the bookmark is saved, get shortened url, get statisctis.</li>
+  <li>Create a model with following variables: User,Bookmark,ClickLog,ShortUrl</li>
+  <li>Create service ShortenUrl which it will provide short urls.</li>
+  <li>In order for the statistics to be shown I will use 'Database Query' for 'Chart Data' in razor page.</li>
+</ol>
+<h2>Second way</h2>
+<ol>
+  <li>I will use third party services for this kind of requirement.</li>
+  <li>Set up Google Analytics account and add tracking rules.</li>
+  <li>Access the Google Data API programmatically.</li>
+  <li>I will show the data with help of "Chart data" in razor page.</li>
 </ol>
