@@ -43,7 +43,7 @@ namespace ReadLater5.Controllers
                 _Logger.LogInformation("No current user");
                 return NotFound();
             }
-            var bookmarks = await _bookmarkService.GetBookmarks();
+            var bookmarks = await _bookmarkService.GetBookmarks(currenUser.Id);
             return Ok(bookmarks);
         }
 
@@ -58,7 +58,7 @@ namespace ReadLater5.Controllers
                 _Logger.LogInformation("No current user");
                 return NotFound();
             }
-            var bookmark = await _bookmarkService.GetBookmark(id);
+            var bookmark = await _bookmarkService.GetBookmark(id, currenUser.Id);
             return Ok(bookmark);
         }
 
@@ -73,21 +73,35 @@ namespace ReadLater5.Controllers
                 return NotFound();
             }
 
-            var createdBookmark = await _bookmarkService.CreateBookmark(bookmark);
+            var createdBookmark = await _bookmarkService.CreateBookmark(bookmark,"asdasd");
             return CreatedAtRoute("SpecificBookmark", createdBookmark);
         }
         //Delete bookmark for user
         [HttpDelete]
-        public ActionResult DeleteBookmark(BookmarkRequest bookmark)
+        public async Task<ActionResult> DeleteBookmark(BookmarkRequest bookmark)
         {
-            _bookmarkService.DeleteBookmark(bookmark);
+            var currenUser = await _CurrentUser.GetCurrentUserAsync();
+
+            if (currenUser == null)
+            {
+                _Logger.LogInformation("No current user");
+                return NotFound();
+            }
+            _bookmarkService.DeleteBookmark(bookmark, currenUser.Id);
             return NoContent();
         }
         //Update bookmark for user
         [HttpPut]
-        public ActionResult UpdateBookmark(BookmarkRequest bookmark)
+        public async Task<ActionResult> UpdateBookmark(BookmarkRequest bookmark)
         {
-            _bookmarkService.UpdateBookmark(bookmark); 
+            var currenUser = await _CurrentUser.GetCurrentUserAsync();
+
+            if (currenUser == null)
+            {
+                _Logger.LogInformation("No current user");
+                return NotFound();
+            }
+            _bookmarkService.UpdateBookmark(bookmark, currenUser.Id); 
             return NoContent();
         }
     }
