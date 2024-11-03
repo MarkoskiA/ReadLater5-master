@@ -1,7 +1,7 @@
 <h1>Read Later</h1>
 <p> I Have finnished the assignment. Some of the things are not working property because I don't have no more time to debug it.</p>
 <p> I want to mention that I don't have experience with Razor pages so I did not create views for booking part. If thats the job requirement I will master it in very short time</p>
-<p>I want to mention that for the past 3 years I have been working with Angular 70% of the time and on the backend I have been working 30% but in my free time I watch courese for .Net and I would like to work with .net from now on</p>
+<p>I want to mention that for the past 3 years I have been working with Angular 70% of the time and on the backend I have been working with .Net 30% but in my free time I watch courese for .Net and I would like to work with .net from now on</p>
 <p> For the optional tasks I have choose to do the first one and I will explain in this file how I can achieve the second and the third one.</p>
 <h2>Create Web Widget</h2>
 <ol>
